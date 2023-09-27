@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFEB3B">
+
+    <TextView
+        android:id="@+id/header_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:layout_marginStart="160dp"
+        android:text="@string/app_name" />
+
+    <TextView
+        android:id="@+id/subheader_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-100dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/subheader" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-250dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/national_number" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-105dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-20dp"
+        android:layout_marginTop="140dp"
+        android:text="@string/species" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-60dp"
+        android:layout_marginTop="180dp"
+        android:text="@string/gender" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-40dp"
+        android:layout_marginTop="220dp"
+        android:text="@string/height" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-40dp"
+        android:layout_marginTop="260dp"
+        android:text="@string/weight" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-40dp"
+        android:layout_marginTop="300dp"
+        android:text="@string/level" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-40dp"
+        android:layout_marginTop="340dp"
+        android:text="@string/hp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-10dp"
+        android:layout_marginTop="380dp"
+        android:text="@string/base_stats" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-80dp"
+        android:layout_marginTop="420dp"
+        android:text="@string/attack" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-40dp"
+        android:layout_marginTop="460dp"
+        android:text="@string/defense" />
+
+    <EditText
+        android:id="@+id/national_number_ET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="896" />
+
+    <EditText
+        android:id="@+id/name_ET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-210dp"
+        android:layout_marginTop="90dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Glastrier" />
+
+    <EditText
+        android:id="@+id/species_ET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-210dp"
+        android:layout_marginTop="130dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Wild Horse Pokemon" />
+
+    <EditText
+        android:id="@+id/height_ET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-210dp"
+        android:layout_marginTop="210dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="2.2 m" />
+
+    <EditText
+        android:id="@+id/weight_ET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-210dp"
+        android:layout_marginTop="250dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="800.0 kg" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-210dp"
+        android:layout_marginTop="290dp" />
+
+    <EditText
+        android:id="@+id/hp_ET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-270dp"
+        android:layout_marginTop="330dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/attack_ET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-210dp"
+        android:layout_marginTop="420dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/defense_ET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-210dp"
+        android:layout_marginTop="460dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="0" />
+
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-40dp"
+        android:layout_marginTop="600dp"
+        android:onClick="reset"
+        android:text="Reset" />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-85dp"
+        android:layout_marginTop="650dp"
+        android:background="#FFEB3B"
+        android:text="Save" />
+
+    <RadioButton
+        android:id="@+id/male_RB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-300dp"
+        android:layout_marginTop="180dp"
+        android:text="Male" />
+
+    <RadioButton
+        android:id="@+id/female_RB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="180dp"
+        android:text="Female" />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

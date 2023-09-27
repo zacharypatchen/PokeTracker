@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name = "levels_array">
+        <item>
+            Level 1
+        </item>
+        <item>
+            Level 5
+        </item>
+        <item>
+            Level 10
+        </item>
+        <item>
+            Level 20
+        </item>
+        <item>
+            Level 25
+        </item>
+        <item>
+            Level 30
+        </item>
+        <item>
+            Level 35
+        </item>
+        <item>
+            Level 40
+        </item>
+        <item>
+            Level 45
+        </item>
+        <item>
+            Level 50
+        </item>
+    </string-array>
+</resources>
