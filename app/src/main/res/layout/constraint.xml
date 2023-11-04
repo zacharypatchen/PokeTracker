@@ -170,26 +170,26 @@
         android:text="Wild Horse Pokemon"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/name_ET" />
-
-    <RadioButton
-        android:id="@+id/male_RB"
+    <RadioGroup
+        android:id="@+id/gender_radio_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="10dp"
-        android:text="Male"
+        android:orientation="horizontal"
         app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/species_ET" />
+        app:layout_constraintTop_toBottomOf="@+id/species_ET">
 
-    <RadioButton
-        android:id="@+id/female_RB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="10dp"
-        android:text="Female"
-        app:layout_constraintStart_toEndOf="@+id/male_RB"
-        app:layout_constraintTop_toBottomOf="@+id/species_ET" />
+        <RadioButton
+            android:id="@+id/male_RB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/female_RB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female" />
+    </RadioGroup>
 
     <EditText
         android:id="@+id/height_ET"

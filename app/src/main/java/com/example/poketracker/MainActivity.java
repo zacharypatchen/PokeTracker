@@ -55,9 +55,9 @@ public class MainActivity extends AppCompatActivity {
         species.setText("Wild Horse Pokemon");
         height.setText("2.2 m");
         weight.setText("800.0 kg");
-        hp.setText("0");
-        attack.setText("0");
-        defense.setText("0");
+        hp.setText("50");
+        attack.setText("50");
+        defense.setText("50");
     }
     private View.OnClickListener submitListener = new View.OnClickListener() {
         @Override
@@ -67,13 +67,50 @@ public class MainActivity extends AppCompatActivity {
             String errorMessage = "Invalid input";
             Boolean success = checkSave();
             if (success==true){
-                Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+                storeDataToSQL();
             }
             else{
                 Toast.makeText(MainActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
             }
         }
     };
+    private void storeDataToSQL() {
+        // Assuming you have a DatabaseHelper class to manage your database
+        DatabaseHelper dbHelper = new DatabaseHelper(this);
+
+        // Get data from your UI elements
+        EditText natNum = findViewById(R.id.national_number_ET);
+        EditText name = findViewById(R.id.name_ET);
+        EditText species = findViewById(R.id.species_ET);
+        EditText height = findViewById(R.id.height_ET);
+        EditText weight = findViewById(R.id.weight_ET);
+        EditText hp = findViewById(R.id.hp_ET);
+        EditText attack = findViewById(R.id.attack_ET);
+        EditText defense = findViewById(R.id.defense_ET);
+
+        // Get the values from UI elements
+        String nationalNumber = natNum.getText().toString();
+        String pokemonName = name.getText().toString();
+        String pokemonSpecies = species.getText().toString();
+        String pokemonHeight = height.getText().toString();
+        String pokemonWeight = weight.getText().toString();
+        int pokemonHP = Integer.parseInt(hp.getText().toString());
+        int pokemonAttack = Integer.parseInt(attack.getText().toString());
+        int pokemonDefense = Integer.parseInt(defense.getText().toString());
+
+        // Insert data into the database
+        boolean isInserted = dbHelper.insertData(nationalNumber, pokemonName, pokemonSpecies,
+                pokemonHeight, pokemonWeight, pokemonHP, pokemonAttack, pokemonDefense);
+
+        if (isInserted) {
+            Toast.makeText(MainActivity.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(MainActivity.this, "Failed to Insert Data", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
     /*
     I was unable to add the following features:
     -empty field check (I attempted at it, couldnt figure out why my if statement
