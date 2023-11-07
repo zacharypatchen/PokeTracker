@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -30,8 +31,13 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         Button saveButton = findViewById(R.id.save_button);
+        Button viewDBButton = findViewById(R.id.view_db_button);
         saveButton.setOnClickListener(submitListener);
 
+    }
+    public void viewDatabaseActivity(View view){
+        DatabaseListViewActivity databaseListViewActivity = new DatabaseListViewActivity();
+        databaseListViewActivity.showDatabase();
     }
     /*
        I couldn't figure out how to reset gender or spinner
@@ -59,22 +65,7 @@ public class MainActivity extends AppCompatActivity {
         attack.setText("50");
         defense.setText("50");
     }
-    private View.OnClickListener submitListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
 
-            String message = "Success";
-            String errorMessage = "Invalid input";
-            Boolean success = checkSave();
-            if (success==true){
-                //Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
-                storeDataToSQL();
-            }
-            else{
-                Toast.makeText(MainActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
-            }
-        }
-    };
     private void storeDataToSQL() {
         // Assuming you have a DatabaseHelper class to manage your database
         DatabaseHelper dbHelper = new DatabaseHelper(this);
@@ -88,8 +79,14 @@ public class MainActivity extends AppCompatActivity {
         EditText hp = findViewById(R.id.hp_ET);
         EditText attack = findViewById(R.id.attack_ET);
         EditText defense = findViewById(R.id.defense_ET);
+        RadioGroup genderGroup = findViewById(R.id.gender_radio_group);
+        int selectedID = genderGroup.getCheckedRadioButtonId();
+        RadioButton selectedRadioButton = findViewById(selectedID);
+        Spinner spinner = findViewById(R.id.spinner);
+        int selectedPosition = spinner.getSelectedItemPosition();
 
-        // Get the values from UI elements
+        String pokemonLevel = spinner.getSelectedItem().toString();
+        String pokemonGender = selectedRadioButton.getText().toString();
         String nationalNumber = natNum.getText().toString();
         String pokemonName = name.getText().toString();
         String pokemonSpecies = species.getText().toString();
@@ -101,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Insert data into the database
         boolean isInserted = dbHelper.insertData(nationalNumber, pokemonName, pokemonSpecies,
-                pokemonHeight, pokemonWeight, pokemonHP, pokemonAttack, pokemonDefense);
+                pokemonHeight, pokemonWeight, pokemonHP, pokemonAttack, pokemonDefense, pokemonLevel, pokemonGender);
 
         if (isInserted) {
             Toast.makeText(MainActivity.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
@@ -137,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
         RadioButton female = findViewById(R.id.female_RB);
         Button resetButton = findViewById(R.id.reset_button);
         Button saveButton = findViewById(R.id.save_button);
+        RadioGroup genderRadioGroup = findViewById(R.id.gender_radio_group);
         //Integer natVal = Integer.parseInt(natNum.getText().toString());
         int nameSize = name.getText().toString().length();
         Integer hpVal = Integer.parseInt(hp.getText().toString());
@@ -144,6 +142,12 @@ public class MainActivity extends AppCompatActivity {
         Integer defenseVal = Integer.parseInt(defense.getText().toString());
         //Float heightVal = Float.parseFloat(height.getText().toString());
         //Float weightVal = Float.parseFloat(weight.getText().toString());
+        if(genderRadioGroup.getCheckedRadioButtonId()==-1){
+            //errorCount++;
+            String errorMessage = "Select a gender";
+            Toast.makeText(MainActivity.this, errorMessage, Toast.LENGTH_LONG).show();
+            return false;
+        }
         if(nameSize < 3 || nameSize >12){
             String errorMessage = "3-12 character names only";
             name.setTextColor(Color.RED);
@@ -223,4 +227,20 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     }
+    private View.OnClickListener submitListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
+            String message = "Success";
+            String errorMessage = "Invalid input";
+            Boolean success = checkSave();
+            if (success==true){
+                //Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+                storeDataToSQL();
+            }
+            else{
+                Toast.makeText(MainActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
+            }
+        }
+    };
 }
