@@ -5,6 +5,8 @@ Methods 'reset' and 'checkSave' perform operations to alter/update the UI
  */
 package com.example.poketracker;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -36,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void viewDatabaseActivity(View view){
-        DatabaseListViewActivity databaseListViewActivity = new DatabaseListViewActivity();
-        databaseListViewActivity.showDatabase();
+        Intent intent = new Intent(this, DatabaseListViewActivity.class);
+        startActivity(intent);
     }
     /*
        I couldn't figure out how to reset gender or spinner

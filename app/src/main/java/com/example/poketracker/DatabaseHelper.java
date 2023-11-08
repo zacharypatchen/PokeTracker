@@ -20,6 +20,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_LEVEL = "level";
     public static final String COL_GENDER = "gender";
 
+
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
@@ -67,7 +68,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     public Cursor getAllData() {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME;
+        String query = "SELECT national_number AS _id, name, species, height, weight, hp, attack, defense, level, gender FROM " + TABLE_NAME;
         return db.rawQuery(query, null);
     }
 }

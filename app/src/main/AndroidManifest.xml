@@ -16,9 +16,6 @@
             android:name=".DatabaseListViewActivity"
             android:exported="false" />
         <activity
-            android:name=".PokemonListActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
