@@ -41,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DatabaseListViewActivity.class);
         startActivity(intent);
     }
+    public void viewDeleteActivity(View view){
+        Intent intent = new Intent(this, DeleteActivity.class);
+        startActivity(intent);
+    }
     /*
        I couldn't figure out how to reset gender or spinner
      */

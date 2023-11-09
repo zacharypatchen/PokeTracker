@@ -71,4 +71,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String query = "SELECT national_number AS _id, name, species, height, weight, hp, attack, defense, level, gender FROM " + TABLE_NAME;
         return db.rawQuery(query, null);
     }
+    public boolean deletePokemon(String nationalNumber) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String whereClause = COL_NATIONAL_NUMBER + " = ?";
+        String[] whereArgs = {nationalNumber};
+        int result = db.delete(TABLE_NAME, whereClause, whereArgs);
+        return result > 0;
+    }
 }

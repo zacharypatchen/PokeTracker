@@ -162,7 +162,7 @@
         android:layout_marginTop="330dp"
         android:ems="10"
         android:inputType="text"
-        android:text="0" />
+        android:text="50" />
 
     <EditText
         android:id="@+id/attack_ET"
@@ -172,7 +172,7 @@
         android:layout_marginTop="420dp"
         android:ems="10"
         android:inputType="text"
-        android:text="0" />
+        android:text="50" />
 
     <EditText
         android:id="@+id/defense_ET"
@@ -182,24 +182,9 @@
         android:layout_marginTop="460dp"
         android:ems="10"
         android:inputType="text"
-        android:text="0" />
+        android:text="50" />
 
-    <Button
-        android:id="@+id/reset_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="-40dp"
-        android:layout_marginTop="600dp"
-        android:onClick="reset"
-        android:text="Reset" />
 
-    <Button
-        android:id="@+id/save_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="-85dp"
-        android:layout_marginTop="650dp"
-        android:text="Save" />
 
     <RadioGroup
         android:id="@+id/gender_radio_group"
@@ -222,14 +207,46 @@
             android:text="Female" />
     </RadioGroup>
 
-    <Button
-        android:id="@+id/view_db_button"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="-40dp"
-        android:layout_marginTop="550dp"
-        android:onClick="viewDatabaseActivity"
-        android:text="View DB" />
+        android:orientation="horizontal"
+        android:layout_marginStart="-280dp"
+        android:layout_marginTop="560dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/view_db_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:onClick="viewDatabaseActivity"
+            android:text="View DB" />
+
+        <Button
+            android:id="@+id/delete_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:onClick="viewDeleteActivity"
+            android:text="Delete" />
+
+        <Button
+            android:id="@+id/reset_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:onClick="reset"
+            android:text="Reset" />
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="saveToDB"
+            android:text="Save" />
+    </LinearLayout>
+
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
